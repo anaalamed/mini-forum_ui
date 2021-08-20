@@ -18,4 +18,4 @@ app.get('*', (req, res) => {
 
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log('Gateway app is running! on Port: ', port))
+app.listen(port, () => console.log(`app is running on http://localhost:${port}`))

@@ -108,15 +108,18 @@ export const deleteComment = createAsyncThunk(
 export const toogleLike = createAsyncThunk(
 'posts/addLikeAsync',
 async (payload) => {
-	console.log(payload);
-		const response = await fetch('https://anaalamed-forum-posts.herokuapp.com/api/posts', {
+	// console.log(payload);
+		const response = await fetch(`https://anaalamed-forum-posts.herokuapp.com/api/posts/${payload.id}`, {
+		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			'user':  (payload.user),
+			'user':  (payload.userId),
 		},
+		body: JSON.stringify({username: payload.username}),
 	});
 		if (response.ok) {
 			const likes = await response.json();
+			console.log(likes);
 			return { id: payload.id, likes };
 		}
 	}

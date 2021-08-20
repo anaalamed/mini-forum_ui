@@ -12,9 +12,8 @@ const Post = ({ postData, single }) => {
   const dispatch = useDispatch();
   const { isLoading } = useSelector(state => state.posts);
   const { comments, likes } = useSelector(state => state.posts.posts.find(item => item._id === post._id));
-  const { me, users } = useSelector(state => state.users);
+  const { me, users, loggedIn } = useSelector(state => state.users);
 
-  // var whoLiked = [];
 
   // delete all comments of the post and then delete the post! 
   const handleDelete = () => {
@@ -23,23 +22,14 @@ const Post = ({ postData, single }) => {
   }
 
   const handleLike = () => {
-    dispatch(toogleLike({ id: post._id, likes: post.likes, user: me._id }));
+    if (loggedIn) {
+      dispatch(toogleLike({ id: post._id, likes: post.likes, userId: me._id, username: me.firstName }));
+    }
   }
 
-  // const handleViewLikes = () => {
-  //   const likes = findName();
-  //   alert(likes);
-  //   whoLiked = likes;
-  // }
-
-  // const findName = () => {
-  //   var names = [];
-  //   likes.forEach(id => {
-  //     names.push(users.find(user => user._id === id)?.firstName);
-  //   });
-  //   // console.log(names);
-  //   return names;
-  // };
+  const handleViewLikes = () => {
+    alert(post.likes.map(obj => obj.name));
+  }
 
   if (isLoading) return <h1>Loading data...</h1>;
   return (
@@ -65,16 +55,11 @@ const Post = ({ postData, single }) => {
 
       <div>
         <span onClick={handleLike}
-        // onMouseEnter={handleViewLikes}
+          onMouseEnter={handleViewLikes}
         ><AiFillLike className="iconL" /> {likes.length}
         </span>
         <AiOutlineComment className="iconL" /> {comments?.length}
       </div>
-
-      {/* <div>
-        {(whoLiked.length !== 0) ? (whoLiked.map(like => (<p>{like}</p>))) : null}
-      </div> */}
-
       <br></br>
     </Box>
 
