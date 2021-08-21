@@ -39,13 +39,13 @@ const SignUp = () => {
     password: {
       required: "Password is required",
       minLength: "Password is too short",
-      pattern: "Password is not strong! \n Must contain at least 1 lowercase, 1 uppercase, 1 numeric, 1 special character "
+      pattern: "Password is not strong! \n Must contain at least 1 letter, 1 numeric"
     },
-    cpassword: {
-      required: "Password is required",
-      minLength: "Password is too short",
-      // pattern: "Passwords don't match!"
-    }
+    // cpassword: {
+    //   required: "Password is required",
+    //   minLength: "Password is too short",
+    //   // pattern: "Passwords don't match!"
+    // }
   };
   const get_error_msg = (errors, error_messages, field_name) => {
     const generate = (name) => {
@@ -142,7 +142,7 @@ const SignUp = () => {
             name="password"
             type='password'
             placeholder="Password"
-            {...register('password', { required: true, minLength: 8, pattern: passwordRegex })}
+            {...register('password', { required: true, minLength: 6, pattern: passwordRegex })}
             error_styled={errors.password}
           ></Input>
           <Error show={errors.password}>

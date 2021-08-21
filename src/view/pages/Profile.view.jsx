@@ -33,6 +33,7 @@ const Profile = ({ id }) => {
             <p>Last Name: <span className="property">{user.lastName}</span></p>
             <p>Country: <span className="property">{user.country}</span></p>
             <p>Joined: <span className="property">{user.created.substring(0, 10)}</span></p>
+            <p>About: <span className="property">{user.about}</span></p>
 
             {(me._id === user._id) ?
               <>
@@ -62,7 +63,7 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 `;
 
 const Section = styled.div`
@@ -76,7 +77,7 @@ const Section = styled.div`
   padding: 3rem;
   border-radius: 1rem;
   &:hover {
-    background-color: coral;
+    /* background-color: coral; */
     transition: 1s;
   }
 

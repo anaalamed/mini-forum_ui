@@ -46,9 +46,11 @@ const Box = styled.div`
   h3:hover {
       background-color: midnightblue;
       color: white;
-      transition: 1s;
       text-decoration: none;
       border-radius: 1rem;
+      /* font-size: 3rem; */
+      transform: rotate(360deg);
+      transition: transform 2s;
   }
   `;
 
