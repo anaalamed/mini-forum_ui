@@ -57,7 +57,7 @@ const Input = styled.input`
         letter-spacing: 0.5rem;
     }
     &:hover {
-      background-color: coral;
+      background-color: #ecb7a1;
       transition: 1s;
     }
 

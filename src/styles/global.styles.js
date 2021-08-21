@@ -5,13 +5,12 @@ const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
     /* font-family: cursive; */
-  font-family: "Yanone Kaffeesatz";
-
-
+    font-family: "Yanone Kaffeesatz";
   }
 
   body {
-  background: #252574
+    background: #252574;
+    color: #242475;
   }
 
   h1 {
@@ -49,8 +48,9 @@ const GlobalStyles = createGlobalStyle`
   .iconL {
     font-size: 2rem;
     margin-left: 1rem;
+    color: coral;
     &:hover {
-      color: white;
+      color: midnightblue;
     }
   }
 

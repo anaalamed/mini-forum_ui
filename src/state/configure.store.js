@@ -8,7 +8,7 @@ import logger from "../middleware/logger.middleware";
 
 const store = configureStore({
   reducer: rootReducer,
-  // preloadedState: get_local_state(),
+  preloadedState: get_local_state(),
   devTools: process.env.NODE_ENV !== "production",
   middleware: [...getDefaultMiddleware(), logger, save_state_locally]
 });
