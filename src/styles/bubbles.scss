@@ -1,0 +1,59 @@
+// Particle setting
+$particle-count: 200;
+$particle-size: 5rem;
+$particle-distance: 100vh;
+$particle-min-speed: 5000;  // ms
+$particle-max-speed: 15000; // ms
+$particle-max-delay: 12000; // ms
+
+
+/*** <--- PARTICLES ---> ***/
+
+.bottom-particles{
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  .bubble{
+    opacity:0;
+    position: absolute;
+    bottom: -$particle-size;
+    width: $particle-size;
+    height: $particle-size;
+    border-radius: 1rem;
+    border: 1px solid white;
+    z-index: 0;
+    
+    
+    // Randomize bubles
+    @for $i from 1 through $particle-count{
+      
+      // random animation speed
+      $speed: random($particle-max-speed) + 0ms;
+      @if $speed < $particle-min-speed{
+        $speed: $particle-min-speed + 0ms;
+      }
+        
+      &:nth-child(#{$i}){
+        left: random(100) + 0%;
+        animation: blow $speed infinite;
+        animation-delay: random($particle-max-delay) + 0ms;
+      }
+    }
+      
+  }
+}
+
+@keyframes blow {
+   0% {
+      opacity: 0;
+      transform:translate(0, 0);
+   }
+   20% { 
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+      transform:translate(0, -$particle-distance) scale(.2);
+   }
+}

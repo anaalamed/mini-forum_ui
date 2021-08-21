@@ -1,0 +1,23 @@
+// Background 
+$blue: #1c0abe;
+$bluemedium: #465cbd;
+$bluelight: #8eb7e4;
+$tran-speed: 10s;
+
+body{
+    // overflow: hidden;
+    background: $blue;
+    animation: changeBg $tran-speed infinite alternate;
+  }
+
+  @keyframes changeBg{
+    0%{
+      background: $bluelight;
+    }
+    33.33333333%{
+      background: $bluemedium;
+    }
+    66.66666666%{
+      background: $blue;
+    }
+  }

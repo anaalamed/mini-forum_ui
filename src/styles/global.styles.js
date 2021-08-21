@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { createGlobalStyle} from "styled-components";
+import './bg.css';
 
 const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
-    /* font-family: cursive; */
     font-family: "Yanone Kaffeesatz";
   }
 
@@ -32,6 +32,16 @@ const GlobalStyles = createGlobalStyle`
 
   input { 
     padding: 0.6rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[value] {
+    letter-spacing: 0.3rem;
+    font-size: 2rem;
+    color: #242475;
   }
 
   A {
@@ -52,6 +62,11 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       color: midnightblue;
     }
+  }
+
+  label {
+   font-weight: bold;
+   display: none;
   }
 
 `;
@@ -95,3 +110,20 @@ export const Row = styled.div`
     align-items: center;
     padding: 0 1rem ;
   `;
+
+export const Input = styled.input`
+  background: ${({ error_styled }) => (error_styled ? "pink" : "white")};
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  font-family: Arial;
+  margin-bottom: 2rem;
+  
+  border-radius: 0.5rem;
+  border: none;
+  border-bottom: 5px solid midnightblue;
+
+  &:hover {
+    border-bottom-color: coral;
+  }
+`;

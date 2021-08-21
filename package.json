@@ -23,6 +23,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "react-scripts start",
+    "sass": "sass --watch src/styles/bg.scss:src/styles/bg.css &sass --watch src/styles/bubbles.scss:src/styles/bubbles.css",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

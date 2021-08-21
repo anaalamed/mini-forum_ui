@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from "react-redux";
 import countries from '../../data/countries';
-import { Title, Button } from '../../styles/global.styles';
+import { Title, Button, Input } from '../../styles/global.styles';
 import { registration } from '../../state/slices/users.slice'
 
 const SignUp = () => {
@@ -78,13 +78,13 @@ const SignUp = () => {
         <Form
           onSubmit={handleSubmit(onSubmit)}
         >
-          <label>Name: </label>
           <Input
             name="first_name"
             placeholder="First Name"
             {...register('first_name', { required: true, minLength: 2 })}
             error_styled={errors?.first_name}
           ></Input>
+          <label>Name: </label>
           <Error show={errors?.first_name}>
             {get_error_msg(errors, error_messages, "first_name")}
           </Error>
@@ -198,27 +198,24 @@ const Form = styled.form`
   border-radius: 1rem;
   border: 3px solid midnightblue;
   &:hover {
-        /* filter: brightness(90%); */
-        background: coral;
-        transition: 0.1s;
+      background-color: #ecb7a1;
+      transition: 0.1s;
     }
-`;
-
-const Input = styled.input`
-  background: ${({ error_styled }) => (error_styled ? "pink" : "white")};
-  width: 100%;
-  font-size: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-family: Arial;
-  margin-bottom: 2rem;
 `;
 
 
 const WraperSelect = styled.div`
   select {
     background: ${({ error_styled }) => (error_styled ? "pink" : "white")};
+    border-radius: 0.5rem;
+    border: none;
+    border-bottom: 5px solid midnightblue;
+    outline: none;
+    &:hover {
+      border-bottom-color: coral;
+    }
   }
+  
 `;
 
 const Select = styled.select`
@@ -238,6 +235,12 @@ const Textarea = styled.textarea`
   font-size: 1rem;
   padding: 1rem;
   font-family: Arial;
+  border: none;
+    border-bottom: 5px solid midnightblue;
+    outline: none;
+    &:hover {
+      border-bottom-color: coral;
+    }
 `;
 
 const Error = styled.div`

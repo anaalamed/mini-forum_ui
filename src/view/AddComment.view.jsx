@@ -55,12 +55,12 @@ const Input = styled.input`
     border-bottom-left-radius: 1rem;
     ::placeholder {
         letter-spacing: 0.5rem;
+        font-size: large;
     }
     &:hover {
       background-color: #ecb7a1;
       transition: 1s;
     }
-
 `;
 
 const Button = styled.button`

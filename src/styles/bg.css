@@ -1,0 +1,18 @@
+body {
+  background: #1c0abe;
+  animation: changeBg 10s infinite alternate;
+}
+
+@keyframes changeBg {
+  0% {
+    background: #8eb7e4;
+  }
+  33.33333333% {
+    background: #465cbd;
+  }
+  66.66666666% {
+    background: #1c0abe;
+  }
+}
+
+/*# sourceMappingURL=bg.css.map */

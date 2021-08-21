@@ -3,7 +3,9 @@ import { useRoutes, A } from 'hookrouter';
 import { BrowserRouter as Router } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-import { getComments } from '../state/slices/posts.slice'
+import { getComments } from '../state/slices/posts.slice';
+import '../styles/bubbles.css';
+
 
 import Home from "./pages/Home.view";
 import Comments from "./Comments.view";
@@ -37,7 +39,10 @@ const App = () => {
         posts.map(post => dispatch(getComments(post._id)));
     }, [posts.length]);
 
-
+    var bubbles = [];
+    for (var i = 0; i < 100; i++) {
+        bubbles.push(<div className="bubble"></div>);
+    }
 
     return (
         <Router>
@@ -59,6 +64,7 @@ const App = () => {
                             <A href="/login">Log In</A>
                         </div>
                     }
+                    <div className="bottom-particles">{bubbles}</div>
 
                 </Menu>
             </Box>

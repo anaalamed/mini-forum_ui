@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useForm } from 'react-hook-form';
 import { navigate } from "hookrouter";
 import { login } from '../../state/slices/users.slice';
-import { Title, Button } from '../../styles/global.styles';
+import { Title, Button, Input } from '../../styles/global.styles';
 
 
 const LogIn = () => {
@@ -22,21 +22,21 @@ const LogIn = () => {
       <br></br>
 
       <Form onSubmit={handleSubmit(onSubmit)} >
-        <label>Email: </label>
         <Input
           name="email"
           placeholder="Email"
           {...register('email', { required: true, minLength: 8 })}
         ></Input>
+        <label>Email: </label>
         <br></br>
 
-        <label>Password: </label>
         <Input
           name="password"
           type='password'
           placeholder="Password"
           {...register('password', { required: true, minLength: 6 })}
         ></Input>
+        <label>Password: </label>
         <br></br>
         <Button>Log In</Button>
       </Form>
@@ -58,8 +58,6 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-
 `;
 
 const Form = styled.form`
@@ -70,21 +68,10 @@ const Form = styled.form`
   border-radius: 1rem;
   border: 3px solid midnightblue;
   &:hover {
-        /* filter: brightness(90%); */
-        background: coral;
-        transition: 0.1s;
+        background-color: #ecb7a1;
     }
 `;
 
-const Input = styled.input`
-  background: ${({ error_styled }) => (error_styled ? "pink" : "white")};
-  width: 100%;
-  font-size: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-family: Arial;
-  margin-bottom: 2rem;
-`;
 
 const Fake = styled.div`
   margin: 0 auto;
