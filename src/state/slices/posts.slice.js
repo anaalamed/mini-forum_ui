@@ -138,7 +138,7 @@ const postsSlice = createSlice({
         state.isLoading = false;
       },
       [addPostAsync.fulfilled]: (state, action) => {
-        state.posts.push(action.payload.post);
+        state.posts.unshift(action.payload.post);
       },  
       [deletePostAsync.fulfilled]: (state, action) => {
 		const index = state.posts.findIndex(item => item._id === action.payload.id);
@@ -149,7 +149,7 @@ const postsSlice = createSlice({
 		state.posts.find(post => post._id === action.payload.id).comments = action.payload.comments;
       },
 	  [addComment.fulfilled]: (state, action) => {
-		state.posts.find(post => post._id === action.payload.id).comments.push( action.payload.comment);
+		state.posts.find(post => post._id === action.payload.id).comments.unshift( action.payload.comment);
       },
 	  [deleteComment.fulfilled]: (state, action) => {
 		const index = state.posts.find(post => post._id === action.payload.postId).comments.findIndex(comment => comment._id === action.payload.id);

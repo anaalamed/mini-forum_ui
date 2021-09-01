@@ -22,7 +22,8 @@ $particle-max-delay: 12000; // ms
     height: $particle-size;
     border-radius: 1rem;
     border: 1px solid white;
-    z-index: 0;
+    z-index: -1;
+    // background-color: black;
     
     
     // Randomize bubles

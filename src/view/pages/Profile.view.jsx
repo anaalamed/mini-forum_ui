@@ -64,6 +64,9 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  width: 70%;
+  margin: 0 auto;
+  padding: 1rem;
 `;
 
 const Section = styled.div`
@@ -74,11 +77,15 @@ const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 1rem;
   &:hover {
     /* background-color: coral; */
     transition: 1s;
+  }
+  p {
+    margin: 0;
+    padding: 0.5rem;
   }
 
   span {

@@ -15,6 +15,8 @@ const Users = () => {
         dispatch(getUsers());
     }, []);
 
+    if (users.length === 0) return (<h1>Loading users...</h1>)
+
     return (
         <>
             <Title>Users</Title>
