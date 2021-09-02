@@ -6,5 +6,7 @@ Social media website, where you can create your own profile, share posts, commen
 Servers:  
 Auth: https://github.com/anaalamed/mini-forum_auth  
 Posts: https://github.com/anaalamed/mini-forum_posts  
-Comments: https://github.com/anaalamed/mini-forum_comments  
+Comments: https://github.com/anaalamed/mini-forum_comments 
+
+Deploy on Heroku - https://anaalamed-forum-ui.herokuapp.com
 
